@@ -1,16 +1,16 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation {
-  name = "textedit";
-  buildInputs = [ pkgs.gcc pkgs.sbcl ];
-  src = ./src;
+  name = "my-project";
+  buildInputs = [ pkgs.sbcl pkgs.asdf ];
+  src = ./.;
   phases = "installPhase";
   installPhase = ''
-    mkdir -p $out/bin
-    gcc src/textedit.c -o $out/bin/textedit
-    cp src/textedit.lisp $out/bin/textedit.lisp
-    sbcl --script $out/bin/textedit.lisp
+    sbcl --load textedit.asd
+    sbcl --load textedit/tests.asd
+  '';
+  testPhase = ''
+    sbcl --load textedit/tests.asd
+    sbcl --eval '(asdf:test-system "textedit/tests")'
   '';
 }
-
-
