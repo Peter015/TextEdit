@@ -1,7 +1,7 @@
 (defsystem "textedit"
-  :version "0.1.0"
-  :author ""
-  :license ""
+  :version "0.0.1"
+  :author "Peter Zimmermann"
+  :license "Apache 2.0"
   :depends-on ()
   :components ((:module "src"
                 :components
