@@ -7,7 +7,7 @@
   :components ((:module "src"
                 :components
                 ((:file "main")
-								 (:file "core.c"))))
+								 (:c-source-file "core.c"))))
 	:compile-op :all
 	:test-op (:test-path "textedit/tests"))
 

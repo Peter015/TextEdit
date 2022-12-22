@@ -1,5 +1,2 @@
 * Textedit 
-
-** Usage
-
-** Installation
+A small text editor I am making
