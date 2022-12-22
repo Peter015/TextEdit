@@ -4,11 +4,11 @@
   :license "Apache 2.0"
 	:description "A simple text editor written in C and Common Lisp"
   :depends-on (:sbcl
-	       :cffi)
+							 :cffi)
   :components ((:module "src"
                 :components
                 ((:file "main")
-		 (:c-source-file "core.c"))))
+								(:c-source-file "core.c"))))
 	:compile-op :all
 	:test-op (:test-path "textedit/tests"))
 
